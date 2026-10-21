@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#fffaf7">
+  <title>qwer — 봄을 담은 컴포넌트</title>
+  <link rel="stylesheet" href="components/bloom.css">
+  <link rel="stylesheet" href="assets/components-preview.css">
+  <script type="module" src="views/components.js"></script>
+</head>
+<body class="preview">
+  <a class="preview-skip" href="#content">본문으로 바로 가기</a>
+  <header class="preview-header"><a class="preview-brand" href="./">qwer<span>.</span></a><a class="preview-back" href="courses.html">강의 목록으로 ↗</a></header>
+  <main id="content" class="preview-main">
+    <section class="preview-intro" aria-labelledby="preview-title">
+      <div class="preview-intro__copy"><p class="preview-eyebrow">LITTLE PIECES OF SPRING</p><h1 id="preview-title">배움이 피어나는<br><em>작은 조각들.</em></h1><p>오늘 마음이 가는 수업을 찾아보세요.<br>벚꽃빛으로 준비한, 네 가지 재사용 컴포넌트.</p></div>
+      <div class="preview-flower" aria-hidden="true">✿<span>LET YOUR CURIOSITY BLOOM</span></div>
+    </section>
+    <section aria-labelledby="search-title" class="preview-section"><div class="preview-section__heading"><h2 id="search-title"><span>01</span> 배움을 찾는 검색바</h2><p>검색어와 관심 분야로 가볍게 시작해요.</p></div><div id="search-mount"></div></section>
+    <section aria-labelledby="categories-title" class="preview-section"><div class="preview-section__heading"><h2 id="categories-title"><span>02</span> 마음이 가는 카테고리</h2><p>선택한 분야의 수업만 모아볼 수 있어요.</p></div><div id="categories-mount"></div></section>
+    <section aria-labelledby="tiles-title" class="preview-section"><div class="preview-section__heading"><h2 id="tiles-title"><span>03</span> 호기심을 담은 강의 카드</h2><p id="result-count" aria-live="polite"></p></div><div id="tiles-mount" class="preview-grid"></div><p id="empty-message" class="preview-empty" hidden>아직 만나지 못한 배움이네요. 다른 검색어나 분야를 골라보세요.</p><p id="interaction-message" class="preview-message" role="status" aria-live="polite">하트를 눌러 관심 강의를 담아보세요. 미리보기의 찜은 새로고침하면 초기화돼요.</p></section>
+    <section aria-labelledby="banner-title" class="preview-section"><div class="preview-section__heading"><h2 id="banner-title"><span>04</span> 다정하게 건네는 초대</h2><p>강사 소개나 추천 수업 안내에 활용해요.</p></div><div id="banner-mount"></div></section>
+    <p class="preview-note">컴포넌트 미리보기 · 검색과 찜은 이 화면에서만 동작하며 구매 및 계정 정보를 변경하지 않아요.</p>
+  </main>
+  <footer class="preview-footer"><span>© 2026 qwer.</span><span>Small steps, in full bloom.</span></footer>
+</body>
+</html>

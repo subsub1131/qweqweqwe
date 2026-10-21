@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="theme-color" content="#fff7f7">
+<meta name="referrer" content="no-referrer">
+<script src="assets/payment-return.js"></script>
+<title>qwer — 작은 배움의 시작</title>
+<link rel="stylesheet" href="assets/courses.css">
+<script src="config.js" defer></script><script src="assets/vendor/axios.min.js" defer></script><script type="module" src="views/courses.js"></script>
+</head>
+<body>
+<a class="skip" href="#content">본문으로 바로 가기</a>
+<header><a class="brand" href="./">qwer<span>.</span></a><a class="login-link" href="./">로그인 · 내 계정 ↗</a></header>
+<main id="content">
+<section class="hero"><div><p class="eyebrow">A LITTLE LEARNING, A NEW SEASON</p><h1>작은 배움으로,<br>나만의 <em>계절을.</em></h1><p>호기심이 피어나는 곳.<br>오늘 마음이 가는 수업을 만나보세요.</p></div><img src="cherry-blossom.svg" alt="" width="410" height="220"></section>
+<aside class="demo-note"><strong>PortOne · 테스트 채널</strong><span>실제 청구 없는 테스트 결제예요. 결제 채널 설정이 필요해요. 데모 상품은 재시작 시 초기화되며, 결제 주문은 별도로 저장돼요.</span></aside>
+<nav aria-label="강의 메뉴"><a href="#catalog" data-testid="nav-catalog">모든 강의</a><a href="#my" data-testid="nav-my">내 강의</a><a href="#register" data-testid="nav-register">강사 체험 · 등록</a></nav>
+<section id="payment-status" class="payment-status" hidden aria-label="결제 상태"><p id="payment-message" data-testid="payment-message" role="status" aria-live="polite"></p><button id="payment-retry" data-testid="payment-retry" type="button" hidden>결제 상태 다시 확인</button> <a href="./">로그인 · 내 계정 ↗</a></section>
+<section id="catalog" aria-labelledby="catalog-title"><div class="section-heading"><h2 id="catalog-title">새로운 시작을 위한 수업</h2><span id="course-count"></span></div><p id="catalog-message" role="status"></p><button id="catalog-retry" type="button" hidden>다시 불러오기</button><div id="course-list" class="course-grid"></div></section>
+<section id="my" hidden aria-labelledby="my-title"><h2 id="my-title">내 강의</h2><p class="muted">서버에서 확인한 내 강의를 모아봤어요. 영상 재생은 제공하지 않는 시연이에요.</p><p id="my-message" role="status"></p><div id="my-courses" class="course-grid"></div></section>
+<section id="register" hidden aria-labelledby="register-title"><h2 id="register-title">강사 체험 · 강의 등록</h2><p class="muted">로그인하면 누구나 등록해 보는 데모예요. 실제 강사 권한, 영상 업로드는 준비 전이에요.</p><form id="register-form"><div class="form-grid"><label>강의 제목<input name="title" required maxlength="120" placeholder="어떤 배움을 나누고 싶으세요?"></label><label>분류<input name="category" required maxlength="40" placeholder="예: 디자인, 취미"></label><label class="wide">강의 소개<textarea name="description" required maxlength="5000" rows="4" placeholder="수업에서 배우는 내용을 소개해 주세요."></textarea></label><label>가격 (원)<input name="price" type="number" min="0" max="10000000" step="1" value="0" required></label><label>분량 (분)<input name="duration_minutes" type="number" min="1" max="100000" step="1" value="60" required></label><label>수업 수<input name="lesson_count" type="number" min="1" max="10000" step="1" value="4" required></label></div><p id="register-message" data-testid="register-message" role="status"></p><button class="primary" data-testid="register-submit" type="submit">데모 강의 등록 →</button></form></section>
+</main>
+<dialog id="course-dialog" aria-labelledby="detail-title"><div class="dialog-top"><span class="eyebrow">YOUR NEXT LITTLE STEP</span><button id="detail-close" type="button">닫기</button></div><p id="detail-category" class="category"></p><h2 id="detail-title"></h2><p id="detail-instructor" class="muted"></p><p id="detail-description"></p><p id="detail-duration" class="muted"></p><p id="detail-price" class="detail-price"></p><p class="demo-detail">PortOne 테스트 채널 · 실제 청구 없이 테스트 결제창을 체험해요.</p><p id="detail-message" data-testid="detail-message" role="status"></p><button class="detail-link" id="detail-payment-retry" type="button" hidden>결제 상태 다시 확인</button><button class="primary" id="purchase-button" data-testid="purchase-button" type="button">PortOne 테스트 결제 →</button><a class="dialog-login" href="./">로그인이 필요한가요? 로그인하기 ↗</a></dialog>
+<footer><span>© 2026 qwer.</span><span>Let your curiosity bloom.</span></footer>
+</body></html>

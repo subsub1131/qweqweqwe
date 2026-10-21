@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 300" fill="none">
+  <defs>
+    <linearGradient id="sky" x1="260" y1="20" x2="260" y2="280" gradientUnits="userSpaceOnUse"><stop stop-color="#F9DFE5"/><stop offset="1" stop-color="#FFF8F3"/></linearGradient>
+    <radialGradient id="petal"><stop stop-color="#EAA0B3"/><stop offset="1" stop-color="#FCE6EB"/></radialGradient>
+    <g id="flower">
+      <g fill="url(#petal)" stroke="#E8AEBD" stroke-width=".45">
+        <path id="p" d="M0 1C-13-4-15-17-5-20L0-17 5-20C15-17 13-4 0 1Z"/>
+        <use href="#p" transform="rotate(72)"/><use href="#p" transform="rotate(144)"/>
+        <use href="#p" transform="rotate(216)"/><use href="#p" transform="rotate(288)"/>
+      </g>
+      <circle r="3" fill="#C06A84"/>
+      <g fill="#FFF7DC"><circle cy="-5" r="1.2"/><circle cx="5" cy="-1" r="1.2"/><circle cx="3" cy="4" r="1.2"/><circle cx="-3" cy="4" r="1.2"/><circle cx="-5" cy="-1" r="1.2"/></g>
+    </g>
+  </defs>
+  <path d="M126 269V139a130 130 0 0 1 260 0v130Z" fill="url(#sky)"/>
+  <path d="M146 269V142a110 110 0 0 1 220 0v127" stroke="#EBC7D0" stroke-width=".8"/>
+  <circle cx="293" cy="103" r="38" fill="#FFF9EF" opacity=".9"/>
+  <path d="M23 274H537" stroke="#DFC8CC"/>
+  <path d="M382 274C366 233 347 184 317 151S254 99 205 89" stroke="#956778" stroke-width="5" stroke-linecap="round"/>
+  <path d="M345 199C360 154 392 113 438 89M315 151C307 111 307 75 320 42M270 115C248 127 213 132 181 122M379 140C396 139 425 145 454 132M329 170C304 171 278 183 259 204" stroke="#956778" stroke-width="2.8" stroke-linecap="round"/>
+  <path d="M345 199C337 175 330 155 315 140M306 91L287 66M401 115L404 79M230 96L215 67" stroke="#AD8190" stroke-width="1.5" stroke-linecap="round"/>
+  <g>
+    <use href="#flower" transform="translate(206 87) rotate(-18) scale(.9)"/>
+    <use href="#flower" transform="translate(235 105) rotate(15) scale(.7)"/>
+    <use href="#flower" transform="translate(182 122) rotate(-8) scale(.65)"/>
+    <use href="#flower" transform="translate(216 125) rotate(30) scale(.85)"/>
+    <use href="#flower" transform="translate(216 65) rotate(5) scale(.6)"/>
+    <use href="#flower" transform="translate(286 65) rotate(-20) scale(.8)"/>
+    <use href="#flower" transform="translate(319 45) rotate(12) scale(.9)"/>
+    <use href="#flower" transform="translate(308 91) rotate(40) scale(.65)"/>
+    <use href="#flower" transform="translate(314 135) rotate(-15) scale(1.05)"/>
+    <use href="#flower" transform="translate(339 153) rotate(10) scale(.7)"/>
+    <use href="#flower" transform="translate(404 79) rotate(20) scale(.7)"/>
+    <use href="#flower" transform="translate(435 90) rotate(-12) scale(1)"/>
+    <use href="#flower" transform="translate(407 116) rotate(15) scale(.8)"/>
+    <use href="#flower" transform="translate(453 133) rotate(35) scale(.75)"/>
+    <use href="#flower" transform="translate(380 140) rotate(-5) scale(.9)"/>
+    <use href="#flower" transform="translate(282 186) rotate(30) scale(.8)"/>
+    <use href="#flower" transform="translate(258 205) rotate(-10) scale(.6)"/>
+  </g>
+  <g fill="#DFA0B3" opacity=".75">
+    <path d="M131 81q-11-15-14 0 4 13 14 0Z" transform="rotate(-25 131 81)"/>
+    <path d="M207 204q-11-15-14 0 4 13 14 0Z" transform="rotate(35 207 204)"/>
+    <path d="M452 219q-11-15-14 0 4 13 14 0Z" transform="rotate(-40 452 219)"/>
+    <path d="M170 252q-11-15-14 0 4 13 14 0Z"/>
+    <ellipse cx="270" cy="274" rx="8" ry="2"/><ellipse cx="291" cy="273" rx="5" ry="2"/><ellipse cx="412" cy="274" rx="7" ry="2"/>
+  </g>
+  <g fill="#C57F96"><circle cx="110" cy="175" r="1.5"/><circle cx="474" cy="167" r="2"/><circle cx="263" cy="42" r="1.5"/></g>
+</svg>

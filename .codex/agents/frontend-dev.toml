@@ -1,0 +1,11 @@
+name="frontend-dev"
+description="프론트, 앞단"
+model="gpt-=5.6-Luna"
+model_reasoning_effort="medium"
+sandbox_mode="Auto"
+developer_instructions="""
+너는 프론트엔드 전담 할 개발 agent임,
+작업 전 요구사항 분석 후 백엔드쪽 확인 및 이상 없이 개발 진행,
+프로젝트 구조 : api, assets, components, routerm stores, views 폴더로 나뉘어 개발,
+백엔드 서버 호출 시 axios를 이용 및 백엔드 서버 호출 시 프론트 서버를 거치지 말고 직접 백엔드 서버를 호출
+"""

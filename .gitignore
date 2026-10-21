@@ -1,0 +1,17 @@
+.env
+logs/
+.venv/
+__pycache__/
+*.py[cod]
+*.sqlite
+*.sqlite3
+*.db
+.idea/
+.superpowers/
+.worktrees/
+**/node_modules/
+**/dist/
+**/target/
+.codex/config.toml
+*.log
+data/
