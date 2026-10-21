@@ -1,0 +1,61 @@
+name: Reusable SSH deployment
+
+on:
+  workflow_call:
+    inputs:
+      target:
+        required: true
+        type: string
+      deploy-path:
+        required: true
+        type: string
+      deploy-command:
+        required: true
+        type: string
+    secrets:
+      SSH_HOST:
+        required: true
+      SSH_PORT:
+        required: true
+      SSH_USERNAME:
+        required: true
+      SSH_PASSWORD:
+        required: true
+      SSH_KNOWN_HOSTS:
+        required: true
+
+permissions:
+  contents: read
+
+jobs:
+  deploy:
+    if: github.ref == 'refs/heads/main'
+    name: Deploy ${{ inputs.target }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    # Each target keeps its own pending deployment. The remote flock also
+    # serializes targets if they share the same server/project directory.
+    concurrency:
+      group: ssh-production-${{ github.repository }}-${{ inputs.target }}
+      cancel-in-progress: false
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+        with:
+          persist-credentials: false
+      - name: Install password-based SSH client
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y sshpass
+      - name: Update code and run configured deployment command
+        shell: bash
+        env:
+          SSH_HOST: ${{ secrets.SSH_HOST }}
+          SSH_PORT: ${{ secrets.SSH_PORT }}
+          SSH_USERNAME: ${{ secrets.SSH_USERNAME }}
+          SSHPASS: ${{ secrets.SSH_PASSWORD }}
+          SSH_KNOWN_HOSTS: ${{ secrets.SSH_KNOWN_HOSTS }}
+          DEPLOY_PATH: ${{ inputs.deploy-path }}
+          DEPLOY_COMMAND: ${{ inputs.deploy-command }}
+          DEPLOY_SHA: ${{ github.sha }}
+          DEPLOY_REPOSITORY: ${{ github.repository }}
+        run: bash .github/scripts/deploy-ssh.sh

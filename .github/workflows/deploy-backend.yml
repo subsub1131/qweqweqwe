@@ -1,0 +1,33 @@
+name: Deploy backend
+
+# A PR merge updates main; branch pushes alone do not deploy.
+# Configure 222.112.208.68:9013 through BACKEND_SSH_HOST / BACKEND_SSH_PORT.
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'app/**'
+      - 'api/**'
+      - 'requirements.txt'
+      - '.github/scripts/**'
+      - '.github/workflows/deploy-backend.yml'
+      - '.github/workflows/deploy-ssh.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  deploy:
+    if: github.ref == 'refs/heads/main'
+    uses: ./.github/workflows/deploy-ssh.yml
+    with:
+      target: backend
+      deploy-path: ${{ vars.BACKEND_DEPLOY_PATH }}
+      deploy-command: ${{ vars.BACKEND_DEPLOY_COMMAND }}
+    secrets:
+      SSH_HOST: ${{ secrets.BACKEND_SSH_HOST }}
+      SSH_PORT: ${{ secrets.BACKEND_SSH_PORT }}
+      SSH_USERNAME: ${{ secrets.BACKEND_SSH_USERNAME }}
+      SSH_PASSWORD: ${{ secrets.BACKEND_SSH_PASSWORD }}
+      SSH_KNOWN_HOSTS: ${{ secrets.BACKEND_SSH_KNOWN_HOSTS }}

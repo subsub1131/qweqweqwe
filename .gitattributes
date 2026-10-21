@@ -1,0 +1,3 @@
+# Deployment scripts must keep Unix line endings on Windows checkouts too.
+.github/scripts/*.sh text eol=lf
+.github/workflows/*.yml text eol=lf

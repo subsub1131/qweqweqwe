@@ -1,8 +1,36 @@
 # qwer 벚꽃 로그인 화면
 
+## 프론트 소스 관리
+
+프론트 소스는 프로젝트 루트의 `web/` 폴더에서 관리합니다.
+
+```text
+web/
+├── index.html          # 로그인 화면
+├── courses.html        # 강의 화면
+├── components.html     # 컴포넌트 미리보기
+├── app.js              # 로그인 화면 동작
+├── config.js           # 공개 API 주소 설정
+├── styles.css          # 공통 스타일
+├── cherry-blossom.svg  # 로그인 화면 이미지
+├── api/                # API 요청 모듈
+├── assets/             # 화면별 스타일, 스크립트, 외부 라이브러리
+├── components/         # 재사용 UI 컴포넌트
+├── router/             # 화면 라우팅
+├── stores/             # 화면 상태 관리
+├── views/              # 화면 렌더링
+├── tests/              # 프론트 브라우저 테스트
+├── package.json        # 프론트 의존성 및 테스트 명령
+└── package-lock.json   # 의존성 버전 고정
+```
+
+화면 수정과 새 프론트 파일 추가는 `web/` 안에서 진행합니다. `config.js`를 포함한 프론트 파일은 브라우저에 공개되므로 비밀번호나 서버 비밀키를 넣지 않습니다. 백엔드 코드는 루트의 `app/`, `api/`에서 관리하고, 로컬 정적 서버 실행 도구는 루트의 `dev_frontend.py`를 사용합니다.
+
+GitHub Actions의 프론트 배포 워크플로는 `web/**` 변경이 `main`에 반영되면 실행되도록 구성되어 있습니다. 서버 접속 및 실행 명령 설정은 [배포 가이드](../docs/GITHUB-ACTIONS-DEPLOY.md)를 참고합니다.
+
 ## 프런트와 백엔드 별도 실행
 
-프로젝트 루트 `C:\JANG\python\mainStudy`에서 터미널 두 개로 실행합니다.
+프로젝트 루트(현재 `C:\JANG\python\qweqweqwe`)에서 터미널 두 개로 실행합니다.
 
 ```powershell
 # 백엔드: 인증과 API
