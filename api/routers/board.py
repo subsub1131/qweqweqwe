@@ -51,4 +51,4 @@ def insertBoard(data: BoardReq):
 
 @router.post("/boardDel")
 def boardDel(data: BoardSearchReq, db: Session = Depends(get_db)):
-    print("boardData Delete")
+    print("boardData Delete ㅋㅋㅋㅋㅋㅋ")
