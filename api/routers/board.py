@@ -47,3 +47,8 @@ def insertBoard(data: BoardReq):
     db.refresh(datas)
 
     return datas
+
+
+@router.post("/boardDel")
+def boardDel(data: BoardSearchReq, db: Session = Depends(get_db)):
+    print("boardData Delete")
